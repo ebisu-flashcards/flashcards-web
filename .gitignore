@@ -1,10 +1,10 @@
 # Ignore IDE specific files/directories
-/.idea
+.idea/
 
 # Ignore Node/NPM specific files/directories
-/node_modules
+node_modules/
 package-lock.json
 
 # Ignore Svelte[-kit] generated artifact files/directories
-/.svelte
-/.svelte-kit
+.svelte/
+.svelte-kit/
