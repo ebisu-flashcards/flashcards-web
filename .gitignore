@@ -3,7 +3,6 @@
 
 # Ignore Node/NPM specific files/directories
 node_modules/
-package-lock.json
 
 # Ignore Svelte[-kit] generated artifact files/directories
 .svelte/
