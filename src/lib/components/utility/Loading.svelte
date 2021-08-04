@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { faFish } from "@fortawesome/free-solid-svg-icons/faFish";
+    import { faFish } from "@fortawesome/free-solid-svg-icons/faFish.js";
     import FaIcon from "./FaIcon.svelte";
 </script>
 
