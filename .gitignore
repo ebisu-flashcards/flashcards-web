@@ -7,3 +7,4 @@ node_modules/
 # Ignore Svelte[-kit] generated artifact files/directories
 .svelte/
 .svelte-kit/
+build/
