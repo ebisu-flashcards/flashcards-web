@@ -1,9 +1,10 @@
 <script lang="ts">
     import SectionHeader from "../../../../../utility/SectionHeader.svelte";
+
     export let id: string;
     export let name: string;
     export let unit: string;
-    
+
     export let min: number;
     export let max: number;
     export let step: number;
@@ -14,11 +15,11 @@
     <label for={id}>
         <SectionHeader class="text-xl">{name} &rightarrow; {value}{unit ? unit : ''}</SectionHeader>
     </label>
-    <input id={id}
+    <input bind:value={value}
            class="flex-grow"
-           type="range"
-           min={min}
+           id={id}
            max={max}
+           min={min}
            step={step}
-           bind:value={value}>
+           type="range">
 </div>

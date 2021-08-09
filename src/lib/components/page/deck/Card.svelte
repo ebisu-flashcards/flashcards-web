@@ -1,5 +1,5 @@
 <script lang="ts">
-    import type {CardModel} from "../../../models/card";
+    import type { CardModel } from "../../../models/card";
 
     export let card: CardModel;
 </script>

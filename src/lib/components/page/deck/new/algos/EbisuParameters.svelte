@@ -11,13 +11,13 @@
 <div class="flex-col-container justify-start gap-y-6 px-4">
     <div class="flex flex-col gap-y-2">
         <ParameterSlider
+            bind:value={initialHalfLife}
             id="parameter-t"
-            name="Initial half-life"
-            min={10}
             max={3600}
+            min={10}
+            name="Initial half-life"
             step={5}
             unit=" minutes"
-            bind:value={initialHalfLife}
         />
         <ExplanationBox>
             <span slot="title">What is half-life?</span>
@@ -26,16 +26,16 @@
             </span>
         </ExplanationBox>
     </div>
-    
+
     <!-- Parameter Alpha -->
     <div class="flex flex-col gap-y-2">
         <ParameterSlider
-            id="parameter-alpha"
-            name="Initial &alpha;"
-            min={1.0}
-            max={30.0}
-            step={0.1}
             bind:value={initialAlpha}
+            id="parameter-alpha"
+            max={30.0}
+            min={1.0}
+            name="Initial &alpha;"
+            step={0.1}
         />
         <ExplanationBox>
             <span slot="title">What is &alpha;?</span>
@@ -47,12 +47,12 @@
 
     <div class="flex flex-col gap-y-2">
         <ParameterSlider
-            id="parameter-beta"
-            name="Initial &beta;"
-            min={1.0}
-            max={30.0}
-            step={0.1}
             bind:value={initialBeta}
+            id="parameter-beta"
+            max={30.0}
+            min={1.0}
+            name="Initial &beta;"
+            step={0.1}
         />
         <ExplanationBox>
             <span slot="title">What is &beta;?</span>
@@ -64,12 +64,12 @@
 
     <div class="flex flex-col gap-y-2">
         <ParameterSlider
-            id="parameter-t"
-            name="Initial t"
-            min={1.0}
-            max={30.0}
-            step={0.1}
             bind:value={initialTime}
+            id="parameter-t"
+            max={30.0}
+            min={1.0}
+            name="Initial t"
+            step={0.1}
         />
         <ExplanationBox>
             <span slot="title">What is initial t?</span>

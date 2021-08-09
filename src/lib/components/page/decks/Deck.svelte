@@ -1,7 +1,7 @@
 <script lang="typescript">
-    import type {DeckModel} from '../../../models/deck';
+    import type { DeckModel } from "../../../models/deck";
     import FaIcon from "../../utility/FaIcon.svelte";
-    import {faLayerGroup, faWrench} from "@fortawesome/free-solid-svg-icons";
+    import { faLayerGroup } from "@fortawesome/free-solid-svg-icons";
 
     export let deck: DeckModel;
 </script>
@@ -13,7 +13,7 @@
             <div class="flex gap-3">
                 <!-- TODO: Add tooltips-->
                 <a class="text-gray-500" href="/deck/{deck.id}/cards">
-                    <FaIcon icon={faLayerGroup} size="1.25rem"/>
+                    <FaIcon icon={faLayerGroup} size="1.25rem" />
                 </a>
             </div>
         </header>

@@ -3,7 +3,7 @@
 
     export var id;
 
-    let extraClasses = '';
+    let extraClasses = "";
     /**
      * Extra classes for the container
      */
@@ -24,11 +24,11 @@
 
 <div class="flex flex-col {extraClasses}">
     <input
-        id={id}
         class="text-2xl border-b outline-none focus:border-indigo-800"
         class:border-red-800={!valid}
-        placeholder={placeholder}
+        id={id}
         on:input
+        placeholder={placeholder}
     />
     <!--{validationError ? <span className="text-base animate-pulse text-red-500">{validationError}</span> : null}-->
     {#if !valid}

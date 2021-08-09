@@ -3,12 +3,12 @@ name: Build Ebisu-Web
 on:
   push:
     branches:
-     - main
-     - feature/*
+      - main
+      - feature/*
   pull_request:
     branches:
       - feature/*
-      
+
 jobs:
   build:
     runs-on: ubuntu-latest

@@ -1,8 +1,8 @@
 <script lang="ts">
     export let color: string;
-    
+
     let extraClasses: string;
-    export {extraClasses as class};
+    export { extraClasses as class };
 </script>
 
 <button

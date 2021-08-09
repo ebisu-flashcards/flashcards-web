@@ -1,5 +1,5 @@
 <script context="module" lang="ts">
-    import {getDeck} from "../../../lib/api";
+    import { getDeck } from "../../../lib/api";
 
     export async function load({ page }) {
         const { id } = page.params;
@@ -7,8 +7,8 @@
 
         return {
             props: {
-                deck,
-            },
+                deck
+            }
         };
     }
 </script>
@@ -23,19 +23,19 @@
      - Search bar
      */
 
-    import {fade} from 'svelte/transition';
+    import { fade } from "svelte/transition";
 
     import Page from "../../../lib/components/Page.svelte";
     import RoundLinkButton from "../../../lib/components/inputs/buttons/RoundLinkButton.svelte";
     import RoundPushButton from "../../../lib/components/inputs/buttons/RoundPushButton.svelte";
-    import type {DeckModel} from "../../../lib/models/deck";
-    import {getCards} from "../../../lib/api";
+    import type { DeckModel } from "../../../lib/models/deck";
+    import { getCards } from "../../../lib/api";
     import Loading from "../../../lib/components/utility/Loading.svelte";
     import FaIcon from "../../../lib/components/utility/FaIcon.svelte";
-    import {faKeyboard} from "@fortawesome/free-solid-svg-icons";
+    import { faKeyboard } from "@fortawesome/free-solid-svg-icons";
     import Card from "../../../lib/components/page/deck/Card.svelte";
 
-    let displayMode: 'grid' | 'table' = "table";
+    let displayMode: "grid" | "table" = "table";
 
     export let deck: DeckModel;
 
@@ -44,8 +44,8 @@
     }
 
     function toggleDisplay(event: InputEvent) {
-        console.log("Togging")
-        displayMode = displayMode === 'grid' ? 'table' : 'grid';
+        console.log("Togging");
+        displayMode = displayMode === "grid" ? "table" : "grid";
     }
 </script>
 
@@ -53,7 +53,7 @@
 
 <Page>
     <!-- Breadcrumbs content -->
-    <div slot="breadcrumbs" class="breadcrumbs">
+    <div class="breadcrumbs" slot="breadcrumbs">
         <a class="underline text-gray-600" href="/decks">DECKS</a>
         <span>&gt;</span>
         <span>{deck.name}</span>
@@ -62,26 +62,26 @@
     </div>
 
     <!-- Button slot -->
-    <div slot="buttons" class="grid grid-cols-2 gap-x-2 gap-y-3">
-            <!-- Add card button -->
-            <RoundLinkButton color="green" href="card/new">
-                <span>Add new card</span>
-                <span class="hidden md:inline">
+    <div class="grid grid-cols-2 gap-x-2 gap-y-3" slot="buttons">
+        <!-- Add card button -->
+        <RoundLinkButton color="green" href="card/new">
+            <span>Add new card</span>
+            <span class="hidden md:inline">
                     ('a' on <FaIcon class="inline" icon={faKeyboard} size="1em" />)
                 </span>
-            </RoundLinkButton>
-            
-            <!-- Deck settings button -->
-            <RoundLinkButton href="/deck/{deck.id}/edit" color="indigo">
-                <span>Deck settings</span>
-            </RoundLinkButton>
-            
-            <!-- Table / Grid button -->
-            <RoundPushButton color="green" class="col-span-2" on:click={toggleDisplay}>
+        </RoundLinkButton>
+
+        <!-- Deck settings button -->
+        <RoundLinkButton color="indigo" href="/deck/{deck.id}/edit">
+            <span>Deck settings</span>
+        </RoundLinkButton>
+
+        <!-- Table / Grid button -->
+        <RoundPushButton class="col-span-2" color="green" on:click={toggleDisplay}>
                 <span>
                     Display as { displayMode === 'table' ? 'grid' : 'table' }
                 </span>
-            </RoundPushButton>
+        </RoundPushButton>
     </div>
 
     <main class="flex-col-container justify-center text-center items-stretch w-full">

@@ -7,8 +7,8 @@
 
         return {
             props: {
-                deck,
-            },
+                deck
+            }
         };
     }
 </script>
@@ -16,12 +16,12 @@
 <script lang="ts">
     import Page from "../../../lib/components/Page.svelte";
     import Loading from "../../../lib/components/utility/Loading.svelte";
-    import {getNextCard} from "../../../lib/api";
-    import type {DeckModel} from "../../../lib/models/deck";
+    import { getNextCard } from "../../../lib/api";
+    import type { DeckModel } from "../../../lib/models/deck";
     import FlatButton from "../../../lib/components/inputs/buttons/FlatButton.svelte";
     import LinkButton from "../../../lib/components/inputs/buttons/RoundLinkButton.svelte";
     import FaIcon from "../../../lib/components/utility/FaIcon.svelte";
-    import {faLayerGroup, faStickyNote} from "@fortawesome/free-solid-svg-icons";
+    import { faLayerGroup, faStickyNote } from "@fortawesome/free-solid-svg-icons";
 
     export let deck: DeckModel;
     let hidden = true;
@@ -36,20 +36,20 @@
 
 <Page>
     <!-- Breadcrumbs content -->
-    <div slot="breadcrumbs" class="breadcrumbs">
+    <div class="breadcrumbs" slot="breadcrumbs">
         <a class="underline text-gray-600" href="/decks">DECKS</a>
         <span>&gt;</span>
         <span>{deck.name}</span>
     </div>
 
     <!-- Button slot -->
-    <div slot="buttons" class="flex gap-4">
-        <LinkButton href="/deck/edit" color="indigo">
-            <FaIcon slot="icon" icon={faStickyNote} size="1.25rem" />
+    <div class="flex gap-4" slot="buttons">
+        <LinkButton color="indigo" href="/deck/edit">
+            <FaIcon icon={faStickyNote} size="1.25rem" slot="icon" />
             <span>Edit card</span>
         </LinkButton>
-        <LinkButton href="/deck/edit" color="indigo">
-            <FaIcon slot="icon" icon={faLayerGroup} size="1.25rem" />
+        <LinkButton color="indigo" href="/deck/edit">
+            <FaIcon icon={faLayerGroup} size="1.25rem" slot="icon" />
             <span>Edit deck</span>
         </LinkButton>
     </div>
@@ -71,7 +71,7 @@
                     {#each card.question.tags as tag}
                         <span
                             class="bg-gray-100 border border-gray-300 px-2 py-1 rounded"
-                            >{tag}</span
+                        >{tag}</span
                         >
                     {/each}
                 </div>
@@ -93,7 +93,7 @@
                     {#each card.answer.tags as tag}
                         <span
                             class="bg-gray-100 border border-gray-300 px-2 py-1 rounded"
-                            >{tag}</span
+                        >{tag}</span
                         >
                     {/each}
                 </div>

@@ -1,11 +1,11 @@
 <script lang="ts">
-    import {getDecks} from "../lib/api";
+    import { getDecks } from "../lib/api";
     import Deck from "../lib/components/page/decks/Deck.svelte";
     import RoundLinkButton from "../lib/components/inputs/buttons/RoundLinkButton.svelte";
     import Page from "../lib/components/Page.svelte";
     import Loading from "../lib/components/utility/Loading.svelte";
     import FaIcon from "../lib/components/utility/FaIcon.svelte";
-    import {faLayerGroup} from "@fortawesome/free-solid-svg-icons";
+    import { faLayerGroup } from "@fortawesome/free-solid-svg-icons";
 </script>
 
 <svelte:head>
@@ -14,19 +14,19 @@
 
 <Page>
     <!-- Breadcrumb slot -->
-    <div slot="breadcrumbs" class="breadcrumbs">
+    <div class="breadcrumbs" slot="breadcrumbs">
         <span>DECKS</span>
     </div>
 
     <!-- Button slot -->
-    <div slot="buttons" class="flex gap-4">
+    <div class="flex gap-4" slot="buttons">
         <!-- New deck button -->
-        <RoundLinkButton href="/deck/new" color="indigo">
-            <FaIcon slot="icon" class="inline" icon={faLayerGroup} size="1rem" />
+        <RoundLinkButton color="indigo" href="/deck/new">
+            <FaIcon class="inline" icon={faLayerGroup} size="1rem" slot="icon" />
             <span>New deck</span>
         </RoundLinkButton>
         <!-- Logout button -->
-        <RoundLinkButton href="/logout" color="red">
+        <RoundLinkButton color="red" href="/logout">
             <span>Logout</span>
         </RoundLinkButton>
     </div>

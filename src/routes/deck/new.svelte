@@ -2,9 +2,9 @@
 
     import Page from "../../lib/components/Page.svelte";
     import ValidatingInput from "../../lib/components/inputs/ValidatingInput.svelte";
-    import {parameterDetails} from "../../lib/components/page/deck/new/algos";
+    import { parameterDetails } from "../../lib/components/page/deck/new/algos";
     import Toggle from "../../lib/components/inputs/Toggle.svelte";
-    import {SvelteComponent} from "svelte";
+    import { SvelteComponent } from "svelte";
     import FlatButton from "../../lib/components/inputs/buttons/FlatButton.svelte";
     import SectionHeader from "../../lib/components/utility/SectionHeader.svelte";
 
@@ -33,7 +33,7 @@
 
 <Page small={true}>
     <!-- Breadcrumbs content -->
-    <div slot="breadcrumbs" class="breadcrumbs">
+    <div class="breadcrumbs" slot="breadcrumbs">
         <a class="underline text-gray-600" href="/decks">DECKS</a>
         <span>&gt;</span>
         {#if deckName.length > 0}
@@ -45,7 +45,7 @@
     </div>
 
     <!-- Main content -->
-    <form on:submit|preventDefault class="flex-col-container">
+    <form class="flex-col-container" on:submit|preventDefault>
         <div class="flex-col-container align-top px-6 py-4 gap-y-6">
 
             <!-- Deck name -->
@@ -55,10 +55,10 @@
                 </SectionHeader>
                 <ValidatingInput
                     id="deck-name"
-                    placeholder="Give the deck a name!"
-                    validationError="Name should not be empty"
-                    valid={nameIsValid}
                     on:input={validateDeckName}
+                    placeholder="Give the deck a name!"
+                    valid={nameIsValid}
+                    validationError="Name should not be empty"
                 />
             </div>
 
@@ -86,14 +86,14 @@
 
             <!-- Algorithm options -->
             <div class="flex-col-container">
-                <svelte:component this={selectedAlgorithm}/>
+                <svelte:component this={selectedAlgorithm} />
             </div>
         </div>
 
         <!-- Save button -->
         <FlatButton color="green"
-                    on:click={handleSubmit}
-                    inprogress={submitting}>
+                    inprogress={submitting}
+                    on:click={handleSubmit}>
             {#if !submitting}
                 CREATE NEW DECK
             {:else}
