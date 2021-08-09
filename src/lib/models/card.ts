@@ -3,11 +3,13 @@ export interface CardModel {
     question: {
         type: "text" | "image";
         tags: string[];
+        context: string[];
         content: string;
     };
     answer: {
         type: "text" | "image";
         tags: string[];
+        context: string[];
         content: string;
     };
 }

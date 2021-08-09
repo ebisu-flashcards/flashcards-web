@@ -1,7 +1,8 @@
 <script context="module" lang="ts">
-    import { getDeck } from "../../../lib/api";
+    import { getDeck } from "$lib/api";
+    import type { LoadInput } from "@sveltejs/kit/types/page";
 
-    export async function load({ page }) {
+    export async function load({ page }: LoadInput) {
         const { id } = page.params;
         const deck = await getDeck(id);
 
@@ -23,27 +24,27 @@
      - Search bar
      */
 
-    import { fade } from "svelte/transition";
+    import Page from "$lib/components/Page.svelte";
+    import Card from "$lib/components/page/deck/Card.svelte";
+    import RoundLinkButton from "$lib/components/inputs/buttons/RoundLinkButton.svelte";
+    import RoundPushButton from "$lib/components/inputs/buttons/RoundPushButton.svelte";
+    import Loading from "$lib/components/utility/Loading.svelte";
 
-    import Page from "../../../lib/components/Page.svelte";
-    import RoundLinkButton from "../../../lib/components/inputs/buttons/RoundLinkButton.svelte";
-    import RoundPushButton from "../../../lib/components/inputs/buttons/RoundPushButton.svelte";
-    import type { DeckModel } from "../../../lib/models/deck";
-    import { getCards } from "../../../lib/api";
-    import Loading from "../../../lib/components/utility/Loading.svelte";
-    import FaIcon from "../../../lib/components/utility/FaIcon.svelte";
+    import type { DeckModel } from "$lib/models/deck";
+    import { getCards } from "$lib/api";
+
+    import Fa from "svelte-fa";
     import { faKeyboard } from "@fortawesome/free-solid-svg-icons";
-    import Card from "../../../lib/components/page/deck/Card.svelte";
 
     let displayMode: "grid" | "table" = "table";
 
     export let deck: DeckModel;
 
-    function handleAdd(event: InputEvent) {
+    function handleAdd(event: KeyboardEvent) {
         console.log("LOL");
     }
 
-    function toggleDisplay(event: InputEvent) {
+    function toggleDisplay(event: MouseEvent) {
         console.log("Togging");
         displayMode = displayMode === "grid" ? "table" : "grid";
     }
@@ -67,8 +68,8 @@
         <RoundLinkButton color="green" href="card/new">
             <span>Add new card</span>
             <span class="hidden md:inline">
-                    ('a' on <FaIcon class="inline" icon={faKeyboard} size="1em" />)
-                </span>
+                ('a' on <Fa icon={faKeyboard} />)
+            </span>
         </RoundLinkButton>
 
         <!-- Deck settings button -->

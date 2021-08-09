@@ -99,7 +99,7 @@ export async function getCards(deckId: string): Promise<CardModel[]> {
 
 export async function getNextCard(
     deckId: string,
-    cardId?: string
+    cardId: string | null
 ): Promise<CardModel> {
     console.log("Getting next card!");
     await wait(1000);

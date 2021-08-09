@@ -1,7 +1,7 @@
 <script lang="ts">
     import { createEventDispatcher } from "svelte";
 
-    export var id;
+    export var id: string;
 
     let extraClasses = "";
     /**
@@ -18,8 +18,6 @@
      */
     export let validationError: string;
     export let placeholder: string;
-
-    const dispatch = createEventDispatcher();
 </script>
 
 <div class="flex flex-col {extraClasses}">

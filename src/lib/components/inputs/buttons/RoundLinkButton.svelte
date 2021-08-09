@@ -3,11 +3,10 @@
     export let color: string;
 
     let extraClasses: string;
-    export { extraClasses as class };
 </script>
 
 <a
-    class="flex items-center gap-1
+    class="flex items-center gap-2
         py-1.5 px-4 rounded-xl 
         bg-{color}-300 font-medium shadow-sm
         transition-colors 
@@ -16,7 +15,7 @@
     {href}>
 
     <!-- Icon slot -->
-    <slot name="icon" />
+    <slot name="icon" class="mr-2" />
 
     <!-- Default content slot -->
     <slot />

@@ -3,7 +3,7 @@
 
     export let id: string;
     export let name: string;
-    export let unit: string;
+    export let unit: string = '';
 
     export let min: number;
     export let max: number;
@@ -13,7 +13,9 @@
 
 <div class="flex-col-container gap-y-2">
     <label for={id}>
-        <SectionHeader class="text-xl">{name} &rightarrow; {value}{unit ? unit : ''}</SectionHeader>
+        <SectionHeader extraClasses="text-xl">
+            {name} &rightarrow; {value}{unit}
+        </SectionHeader>
     </label>
     <input bind:value={value}
            class="flex-grow"

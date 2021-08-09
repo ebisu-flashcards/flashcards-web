@@ -1,12 +1,13 @@
 <script lang="ts">
 
-    import Page from "../../lib/components/Page.svelte";
-    import ValidatingInput from "../../lib/components/inputs/ValidatingInput.svelte";
-    import { parameterDetails } from "../../lib/components/page/deck/new/algos";
-    import Toggle from "../../lib/components/inputs/Toggle.svelte";
-    import { SvelteComponent } from "svelte";
-    import FlatButton from "../../lib/components/inputs/buttons/FlatButton.svelte";
-    import SectionHeader from "../../lib/components/utility/SectionHeader.svelte";
+    import Page from "$lib/components/Page.svelte";
+    import ValidatingInput from "$lib/components/inputs/ValidatingInput.svelte";
+    import { parameterDetails } from "$lib/components/page/deck/new/algos";
+    import Toggle from "$lib/components/inputs/Toggle.svelte";
+    import FlatButton from "$lib/components/inputs/buttons/FlatButton.svelte";
+    import SectionHeader from "$lib/components/utility/SectionHeader.svelte";
+
+    import type { SvelteComponent } from "svelte";
 
     // Parameters ----------------------------------------------------------------
 
@@ -20,12 +21,12 @@
 
     // Validation functions ------------------------------------------------------
 
-    function validateDeckName(event: InputEvent) {
+    function validateDeckName(event: Event) {
         deckName = (event.target as HTMLInputElement).value;
-        nameIsValid = deckName !== null && deckName.length > 0;
+        nameIsValid = deckName.length > 0;
     }
 
-    function handleSubmit(event: InputEvent) {
+    function handleSubmit(event: MouseEvent) {
         console.log("Submitting...");
         submitting = true;
     }
@@ -50,7 +51,7 @@
 
             <!-- Deck name -->
             <div class="flex flex-col gap-y-4">
-                <SectionHeader class="font-bold text-xl">
+                <SectionHeader extraClasses="font-bold text-xl">
                     DECK NAME
                 </SectionHeader>
                 <ValidatingInput
@@ -64,7 +65,7 @@
 
             <!-- Algorithm selector -->
             <div class="flex flex-col gap-y-2">
-                <SectionHeader class="font-bold text-xl">
+                <SectionHeader extraClasses="font-bold text-xl">
                     ALGORITHMS
                 </SectionHeader>
                 <div>
@@ -92,7 +93,7 @@
 
         <!-- Save button -->
         <FlatButton color="green"
-                    inprogress={submitting}
+                    inProgress={submitting}
                     on:click={handleSubmit}>
             {#if !submitting}
                 CREATE NEW DECK

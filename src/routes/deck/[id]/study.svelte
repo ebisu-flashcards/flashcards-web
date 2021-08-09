@@ -1,7 +1,8 @@
 <script context="module" lang="ts">
     import { getDeck } from "$lib/api";
+    import type { LoadInput } from "@sveltejs/kit/types/page";
 
-    export async function load({ page }) {
+    export async function load({ page }: LoadInput) {
         const { id } = page.params;
         const deck = await getDeck(id);
 
@@ -16,12 +17,13 @@
 <script lang="ts">
     import Page from "$lib/components/Page.svelte";
     import Loading from "$lib/components/utility/Loading.svelte";
+    import FlatButton from "$lib/components/inputs/buttons/FlatButton.svelte";
+    import RoundLinkButton from "$lib/components/inputs/buttons/RoundLinkButton.svelte";
+    
     import { getNextCard } from "$lib/api";
     import type { DeckModel } from "$lib/models/deck";
-    import FlatButton from "$lib/components/inputs/buttons/FlatButton.svelte";
-    import LinkButton from "$lib/components/inputs/buttons/RoundLinkButton.svelte";
     
-    import Fa from 'svelte-fa/src/fa.svelte'
+    import Fa from 'svelte-fa'
     import {faStickyNote, faLayerGroup} from "@fortawesome/free-solid-svg-icons";
 
     export let deck: DeckModel;
@@ -45,14 +47,14 @@
 
     <!-- Button slot -->
     <div class="flex gap-4" slot="buttons">
-        <LinkButton color="indigo" href="/deck/edit">
+        <RoundLinkButton color="indigo" href="/deck/edit">
             <Fa icon={faStickyNote} slot="icon" />
             <span>Edit card</span>
-        </LinkButton>
-        <LinkButton color="indigo" href="/deck/edit">
+        </RoundLinkButton>
+        <RoundLinkButton color="indigo" href="/deck/edit">
             <Fa icon={faLayerGroup} slot="icon" />
             <span>Edit deck</span>
-        </LinkButton>
+        </RoundLinkButton>
     </div>
 
     <!-- Main content -->

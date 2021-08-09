@@ -5,7 +5,7 @@
     import Page from "$lib/components/Page.svelte";
     import Loading from "$lib/components/utility/Loading.svelte";
 
-    import Fa from "svelte-fa/src/fa.svelte";
+    import Fa from "svelte-fa";
     import { faLayerGroup } from "@fortawesome/free-solid-svg-icons";
 </script>
 

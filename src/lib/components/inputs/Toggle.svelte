@@ -5,7 +5,7 @@
 
     $: updateRadio(selected, value);
 
-    function updateRadio(selected, value) {
+    function updateRadio(selected: any, value: any) {
         checked = selected === value;
     }
 </script>

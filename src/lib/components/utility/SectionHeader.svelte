@@ -1,6 +1,5 @@
 <script lang="ts">
-    let extraClasses;
-    export { extraClasses as class };
+    export let extraClasses: string;
 </script>
 
 <div class="flex-row-container items-center gap-4 {extraClasses}">

@@ -1,6 +1,6 @@
 <script lang="ts">
-    export let color;
-    export let inprogress;
+    export let color: string;
+    export let inProgress: boolean = false;
 </script>
 
 <button class="leading-10 
@@ -8,7 +8,7 @@
             bg-{color}-300 hover:bg-{color}-400 
             transition-colors 
             w-full"
-        class:barberpole={inprogress}
+        class:barberpole={inProgress}
         on:click
 >
     <slot />

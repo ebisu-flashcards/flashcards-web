@@ -1,12 +1,10 @@
 <script lang="ts">
     import { fade } from "svelte/transition";
 
-    let extraClasses;
-    export { extraClasses as class };
-
+    let extraClasses: string;
     let expanded = false;
 
-    function handleExpand(event: InputEvent) {
+    function handleExpand(event: MouseEvent) {
         expanded = !expanded;
     }
 </script>
