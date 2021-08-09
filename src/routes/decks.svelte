@@ -1,10 +1,11 @@
 <script lang="ts">
-    import { getDecks } from "../lib/api";
-    import Deck from "../lib/components/page/decks/Deck.svelte";
-    import RoundLinkButton from "../lib/components/inputs/buttons/RoundLinkButton.svelte";
-    import Page from "../lib/components/Page.svelte";
-    import Loading from "../lib/components/utility/Loading.svelte";
-    import FaIcon from "../lib/components/utility/FaIcon.svelte";
+    import { getDecks } from "$lib/api";
+    import Deck from "$lib/components/page/decks/Deck.svelte";
+    import RoundLinkButton from "$lib/components/inputs/buttons/RoundLinkButton.svelte";
+    import Page from "$lib/components/Page.svelte";
+    import Loading from "$lib/components/utility/Loading.svelte";
+
+    import Fa from "svelte-fa/src/fa.svelte";
     import { faLayerGroup } from "@fortawesome/free-solid-svg-icons";
 </script>
 
@@ -22,7 +23,7 @@
     <div class="flex gap-4" slot="buttons">
         <!-- New deck button -->
         <RoundLinkButton color="indigo" href="/deck/new">
-            <FaIcon class="inline" icon={faLayerGroup} size="1rem" slot="icon" />
+            <Fa icon={faLayerGroup} />
             <span>New deck</span>
         </RoundLinkButton>
         <!-- Logout button -->

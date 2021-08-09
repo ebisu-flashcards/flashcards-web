@@ -1,5 +1,5 @@
 <script context="module" lang="ts">
-    import { getDeck } from "../../../lib/api";
+    import { getDeck } from "$lib/api";
 
     export async function load({ page }) {
         const { id } = page.params;
@@ -14,14 +14,15 @@
 </script>
 
 <script lang="ts">
-    import Page from "../../../lib/components/Page.svelte";
-    import Loading from "../../../lib/components/utility/Loading.svelte";
-    import { getNextCard } from "../../../lib/api";
-    import type { DeckModel } from "../../../lib/models/deck";
-    import FlatButton from "../../../lib/components/inputs/buttons/FlatButton.svelte";
-    import LinkButton from "../../../lib/components/inputs/buttons/RoundLinkButton.svelte";
-    import FaIcon from "../../../lib/components/utility/FaIcon.svelte";
-    import { faLayerGroup, faStickyNote } from "@fortawesome/free-solid-svg-icons";
+    import Page from "$lib/components/Page.svelte";
+    import Loading from "$lib/components/utility/Loading.svelte";
+    import { getNextCard } from "$lib/api";
+    import type { DeckModel } from "$lib/models/deck";
+    import FlatButton from "$lib/components/inputs/buttons/FlatButton.svelte";
+    import LinkButton from "$lib/components/inputs/buttons/RoundLinkButton.svelte";
+    
+    import Fa from 'svelte-fa/src/fa.svelte'
+    import {faStickyNote, faLayerGroup} from "@fortawesome/free-solid-svg-icons";
 
     export let deck: DeckModel;
     let hidden = true;
@@ -45,11 +46,11 @@
     <!-- Button slot -->
     <div class="flex gap-4" slot="buttons">
         <LinkButton color="indigo" href="/deck/edit">
-            <FaIcon icon={faStickyNote} size="1.25rem" slot="icon" />
+            <Fa icon={faStickyNote} slot="icon" />
             <span>Edit card</span>
         </LinkButton>
         <LinkButton color="indigo" href="/deck/edit">
-            <FaIcon icon={faLayerGroup} size="1.25rem" slot="icon" />
+            <Fa icon={faLayerGroup} slot="icon" />
             <span>Edit deck</span>
         </LinkButton>
     </div>

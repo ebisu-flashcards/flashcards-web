@@ -7,7 +7,6 @@
     "start": "svelte-kit start"
   },
   "devDependencies": {
-    "@fortawesome/fontawesome-common-types": "^0.2.36",
     "@fortawesome/free-solid-svg-icons": "^5.15.4",
     "@sveltejs/adapter-node": "^1.0.0-next.12",
     "@sveltejs/kit": "next",
@@ -20,6 +19,7 @@
     "prettier-plugin-svelte": "^2.3.1",
     "sass": "^1.37.5",
     "svelte": "^3.42.1",
+    "svelte-fa": "^2.2.1",
     "svelte-preprocess": "^4.7.4",
     "tailwindcss": "^2.2.7",
     "tslib": "^2.3.0",
