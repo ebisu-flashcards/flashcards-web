@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "svelte-kit dev",
+    "check": "svelte-check",
     "build": "svelte-kit build",
     "start": "svelte-kit start"
   },
@@ -19,6 +20,7 @@
     "prettier-plugin-svelte": "^2.3.1",
     "sass": "^1.37.5",
     "svelte": "^3.42.1",
+    "svelte-check": "^2.2.4",
     "svelte-fa": "^2.2.1",
     "svelte-preprocess": "^4.7.4",
     "tailwindcss": "^2.2.7",
