@@ -1,5 +1,5 @@
-<script>
-    import "../app.postcss";
-</script>
+<style>
+    @import url(../app.scss);
+</style>
 
 <slot></slot>

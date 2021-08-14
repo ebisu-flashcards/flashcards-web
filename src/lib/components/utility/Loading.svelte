@@ -5,7 +5,7 @@
 
 <div class="flex flex-col items-center text-gray-700">
     <!-- TODO: Let's take this fish out for a swimming -->
-    <Fa icon={faFish} />
+    <Fa icon={faFish} style="animate-swim" />
     <span class="text-2xl">
         <slot />
     </span>

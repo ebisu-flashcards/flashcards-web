@@ -31,6 +31,7 @@
             <span>Logout</span>
         </RoundLinkButton>
     </div>
+    
     <!-- Main content -->
     <main class="flex-grow flex">
         {#await getDecks()}

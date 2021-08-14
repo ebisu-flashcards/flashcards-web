@@ -1,13 +1,7 @@
 <script lang="ts">
-    import { createEventDispatcher } from "svelte";
-
     export var id: string;
 
-    let extraClasses = "";
-    /**
-     * Extra classes for the container
-     */
-    export { extraClasses as class };
+    export let styles = "";
 
     /**
      * Controls whenever the input is valid
@@ -20,13 +14,12 @@
     export let placeholder: string;
 </script>
 
-<div class="flex flex-col {extraClasses}">
+<div class="flex flex-col {styles}">
     <input
-        class="text-2xl border-b outline-none focus:border-indigo-800"
-        class:border-red-800={!valid}
         id={id}
-        on:input
+        class:border-red-800={!valid}
         placeholder={placeholder}
+        on:input
     />
     <!--{validationError ? <span className="text-base animate-pulse text-red-500">{validationError}</span> : null}-->
     {#if !valid}

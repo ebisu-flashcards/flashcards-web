@@ -32,7 +32,7 @@
     }
 </script>
 
-<Page small={true}>
+<Page small>
     <!-- Breadcrumbs content -->
     <div class="breadcrumbs" slot="breadcrumbs">
         <a class="underline text-gray-600" href="/decks">DECKS</a>
@@ -92,9 +92,7 @@
         </div>
 
         <!-- Save button -->
-        <FlatButton color="green"
-                    inProgress={submitting}
-                    on:click={handleSubmit}>
+        <FlatButton color="green" inProgress={submitting} on:click={handleSubmit}>
             {#if !submitting}
                 CREATE NEW DECK
             {:else}

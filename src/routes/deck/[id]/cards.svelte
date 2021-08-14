@@ -68,7 +68,7 @@
         <RoundLinkButton color="green" href="card/new">
             <span>Add new card</span>
             <span class="hidden md:inline">
-                ('a' on <Fa icon={faKeyboard} />)
+                (<kbd>a</kbd>)
             </span>
         </RoundLinkButton>
 

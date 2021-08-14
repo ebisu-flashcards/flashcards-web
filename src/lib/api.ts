@@ -42,12 +42,18 @@ function generateCard(id: number): CardModel {
         question: {
             type: "text",
             tags: questionTags,
-            content: lorem.generateSentences(1)
+            content: lorem.generateSentences(1),
+            context: [
+                lorem.generateSentences(1)
+            ]
         },
         answer: {
             type: "text",
             tags: answerTags,
-            content: lorem.generateSentences(1)
+            content: lorem.generateSentences(1),
+            context: [
+                lorem.generateSentences(1)
+            ]
         }
     };
 }
