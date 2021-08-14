@@ -1,5 +1,5 @@
 <script lang="ts">
-    import SectionHeader from "$lib/utility/SectionHeader.svelte";
+    import SectionHeader from "$lib/components/utility/SectionHeader.svelte";
 
     export let id: string;
     export let name: string;
