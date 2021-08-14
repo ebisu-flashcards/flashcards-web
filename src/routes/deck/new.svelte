@@ -51,7 +51,7 @@
 
             <!-- Deck name -->
             <div class="flex flex-col gap-y-4">
-                <SectionHeader extraClasses="font-bold text-xl">
+                <SectionHeader style="font-bold text-xl">
                     DECK NAME
                 </SectionHeader>
                 <ValidatingInput
@@ -65,7 +65,7 @@
 
             <!-- Algorithm selector -->
             <div class="flex flex-col gap-y-2">
-                <SectionHeader extraClasses="font-bold text-xl">
+                <SectionHeader style="font-bold text-xl">
                     ALGORITHMS
                 </SectionHeader>
                 <div>

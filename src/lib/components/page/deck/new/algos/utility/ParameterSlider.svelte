@@ -1,5 +1,5 @@
 <script lang="ts">
-    import SectionHeader from "../../../../../utility/SectionHeader.svelte";
+    import SectionHeader from "$lib/utility/SectionHeader.svelte";
 
     export let id: string;
     export let name: string;
@@ -13,7 +13,7 @@
 
 <div class="flex-col-container gap-y-2">
     <label for={id}>
-        <SectionHeader extraClasses="text-xl">
+        <SectionHeader style="text-xl">
             {name} &rightarrow; {value}{unit}
         </SectionHeader>
     </label>
