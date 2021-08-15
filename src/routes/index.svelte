@@ -3,6 +3,8 @@
 </script>
 
 <Page>
-    <span>(Insert homepage here)</span>
-    <a href="/decks">Decks</a>
+    <div class="flex-col-container">
+        <span>(Insert homepage here)</span>
+        <a href="/decks">Decks</a>
+    </div>
 </Page>

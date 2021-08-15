@@ -1,14 +1,14 @@
 <script context="module" lang="ts">
-    import { getDeck } from "$lib/api";
-    import type { LoadInput } from "@sveltejs/kit/types/page";
+    import type { Load } from "@sveltejs/kit/types/page";
+    import { getDeck, getDeckCards } from "$lib/api/decks";
 
-    export async function load({ page }: LoadInput) {
+    export const load: Load = async ({ page, fetch }) => {
         const { id } = page.params;
-        const deck = await getDeck(id);
 
         return {
             props: {
-                deck
+                deck: await getDeck(fetch, id),
+                cards: await getDeckCards(fetch, id)
             }
         };
     }
@@ -28,17 +28,14 @@
     import Card from "$lib/components/page/deck/Card.svelte";
     import RoundLinkButton from "$lib/components/inputs/buttons/RoundLinkButton.svelte";
     import RoundPushButton from "$lib/components/inputs/buttons/RoundPushButton.svelte";
-    import Loading from "$lib/components/utility/Loading.svelte";
 
     import type { DeckModel } from "$lib/models/deck";
-    import { getCards } from "$lib/api";
-
-    import Fa from "svelte-fa";
-    import { faKeyboard } from "@fortawesome/free-solid-svg-icons";
+    import type { CardModel } from "$lib/models/card";
 
     let displayMode: "grid" | "table" = "table";
 
     export let deck: DeckModel;
+    export let cards: CardModel[];
 
     function handleAdd(event: KeyboardEvent) {
         console.log("LOL");
@@ -86,9 +83,6 @@
     </div>
 
     <main class="flex-col-container justify-center text-center items-stretch w-full">
-        {#await getCards(deck.id)}
-            <Loading>Loading cards</Loading>
-        {:then cards}
             {#if displayMode === 'table'}
                 <table class="flex-grow w-full table-auto">
                     <thead>
@@ -131,6 +125,5 @@
                     {/each}
                 </div>
             {/if}
-        {/await}
     </main>
 </Page>
