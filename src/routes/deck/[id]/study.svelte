@@ -1,9 +1,9 @@
 <script context="module" lang="ts">
-  import { getDeck } from "$lib/api/decks";
-  import type { LoadInput } from "@sveltejs/kit/types/page";
-  import { getNextCard } from "$lib/api/study";
+import { getDeck } from "$lib/api/decks";
+import type { LoadInput } from "@sveltejs/kit/types/page";
+import { getNextCard } from "$lib/api/study";
 
-  export async function load({ fetch, page }: LoadInput) {
+export async function load({ fetch, page }: LoadInput) {
   const { id } = page.params;
   const [deck, card] = await Promise.all([
     getDeck(fetch, id),
@@ -13,7 +13,7 @@
   return {
     props: {
       deck,
-      card
+      card,
     },
   };
 }
@@ -55,11 +55,11 @@ async function handleAnswer(remembered: boolean) {
 
   <!-- Button slot -->
   <div class="flex gap-4" slot="buttons">
-    <RoundLinkButton color="indigo" href={`/card/${card.id}/edit`}>
+    <RoundLinkButton color="indigo" href="{`/card/${card.id}/edit`}">
       <Fa icon="{faStickyNote}" slot="icon" />
       <span>Edit card</span>
     </RoundLinkButton>
-    <RoundLinkButton color="indigo" href={`/deck/${deck.id}/edit`}>
+    <RoundLinkButton color="indigo" href="{`/deck/${deck.id}/edit`}">
       <Fa icon="{faLayerGroup}" slot="icon" />
       <span>Edit deck</span>
     </RoundLinkButton>
@@ -107,10 +107,16 @@ async function handleAnswer(remembered: boolean) {
         </FlatButton>
       {:else}
         <div class="flex w-full">
-          <FlatButton color="green" style="flex-grow" on:click="{async () => await handleAnswer(true)}">
+          <FlatButton
+            color="green"
+            style="flex-grow"
+            on:click="{async () => await handleAnswer(true)}">
             REMEMBERED
           </FlatButton>
-          <FlatButton color="red" style="flex-grow" on:click="{async () => await handleAnswer(false)}">
+          <FlatButton
+            color="red"
+            style="flex-grow"
+            on:click="{async () => await handleAnswer(false)}">
             FORGOT
           </FlatButton>
         </div>

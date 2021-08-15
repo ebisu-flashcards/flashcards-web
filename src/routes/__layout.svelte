@@ -1,5 +1,5 @@
 <style>
-    @import url(../app.scss);
+@import url(../app.scss);
 </style>
 
-<slot></slot>
+<slot />

@@ -1,11 +1,11 @@
 <script context="module" lang="ts">
-  import type { Load } from "@sveltejs/kit/types/page";
-  import { getDecks } from "$lib/api/decks";
+import type { Load } from "@sveltejs/kit/types/page";
+import { getDecks } from "$lib/api/decks";
 
-  export const load: Load = async ({ fetch }) => {
+export const load: Load = async ({ fetch }) => {
   return {
     props: {
-      decks: await getDecks(fetch)
+      decks: await getDecks(fetch),
     },
   };
 };
