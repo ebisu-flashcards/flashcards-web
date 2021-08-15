@@ -1,5 +1,5 @@
 {
-  "name": "ebisu-flashcard-web",
+  "name": "flashcard-web",
   "version": "0.0.1",
   "scripts": {
     "dev": "svelte-kit dev",
@@ -11,9 +11,10 @@
     "@fortawesome/free-solid-svg-icons": "^5.15.4",
     "@sveltejs/adapter-node": "^1.0.0-next.12",
     "@sveltejs/kit": "next",
+    "@types/faker": "^5.5.8",
     "autoprefixer": "^10.3.1",
     "cssnano": "^5.0.7",
-    "lorem-ipsum": "^2.0.3",
+    "faker": "^5.5.3",
     "postcss": "^8.3.6",
     "postcss-load-config": "^3.1.0",
     "prettier": "^2.3.2",
@@ -30,6 +31,6 @@
   },
   "type": "module",
   "engines": {
-    "node": ">= 12.17.0"
+    "node": ">= 16"
   }
 }
