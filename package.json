@@ -38,6 +38,7 @@
     "node": ">= 16"
   },
   "lint-staged": {
-    "*.{js,css,md}": "prettier --write"
+    "*.{js,ts,scss,md,svelte}": "prettier --write",
+    "*.{svelte}": ""
   }
 }
